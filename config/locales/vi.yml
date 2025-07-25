@@ -1,0 +1,20 @@
+vi:
+  hello: "Xin chào thế giới"
+  site_title: "Ứng dụng mẫu Ruby on Rails Tutorial"
+  static_pages:
+    home:
+      welcome: "Chào mừng đến với Ứng dụng Mẫu"
+      description_html: "Đây là trang chủ cho ứng dụng mẫu %{link}."
+      signup: "Đăng ký ngay!"
+    help:
+      title: "Trợ giúp"
+      heading: "Trợ giúp"
+      description_html: "Nhận trợ giúp về Ruby on Rails Tutorial tại trang trợ giúp Rails Tutorial. Để được trợ giúp về ứng dụng mẫu này, hãy xem sách %{link}."
+  layouts:
+    header:
+      home: "Trang chủ"
+      help: "Trợ giúp"
+      login: "Đăng nhập"
+      brand: "ứng dụng mẫu"
+      english: "Tiếng Anh"
+      vietnamese: "Tiếng Việt"
