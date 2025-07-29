@@ -1,6 +1,8 @@
 vi:
   hello: "Xin chào thế giới"
+
   site_title: "Ứng dụng mẫu Ruby on Rails Tutorial"
+
   static_pages:
     home:
       welcome: "Chào mừng đến với Ứng dụng Mẫu"
@@ -10,6 +12,7 @@ vi:
       title: "Trợ giúp"
       heading: "Trợ giúp"
       description_html: "Nhận trợ giúp về Ruby on Rails Tutorial tại trang trợ giúp Rails Tutorial. Để được trợ giúp về ứng dụng mẫu này, hãy xem sách %{link}."
+
   layouts:
     header:
       home: "Trang chủ"
@@ -18,3 +21,28 @@ vi:
       brand: "ứng dụng mẫu"
       english: "Tiếng Anh"
       vietnamese: "Tiếng Việt"
+
+  activerecord:
+    models:
+      user: "Người dùng"
+    attributes:
+      user:
+        name: "Tên"
+        email: "Email"
+        birthday: "Ngày sinh"
+        password: "Mật khẩu"
+        password_confirmation: "Xác nhận mật khẩu"
+    errors:
+      models:
+        user:
+          attributes:
+            birthday:
+              in_past: "phải nằm trong vòng 100 năm trở lại"
+              in_future: "không được lớn hơn ngày hiện tại"
+
+  errors:
+    messages:
+      blank: "không được để trống"
+      invalid: "không hợp lệ"
+      taken: "đã được sử dụng"
+      too_long: "quá dài (tối đa %{count} ký tự)"
