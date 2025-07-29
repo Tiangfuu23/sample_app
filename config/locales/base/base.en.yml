@@ -1,6 +1,8 @@
 en:
   hello: "Hello world"
+
   site_title: "Ruby on Rails Tutorial Sample App"
+
   static_pages:
     home:
       welcome: "Welcome to the Sample App"
@@ -10,6 +12,7 @@ en:
       title: "Help"
       heading: "Help"
       description_html: "Get help on the Ruby on Rails Tutorial at the Rails Tutorial help page. To get help on this sample app, see the Ruby on %{link}."
+
   header:
     home: "Home"
     help: "Help"
