@@ -5,6 +5,9 @@ class User < ApplicationRecord
   MAX_LENGTH_NAME = 50
   MAX_LENGTH_EMAIL = 255
   MAX_AGE_YEARS = 100
+  USER_PERMIT = %i(name email birthday gender password password_confirmation).freeze
+
+  enum gender: { male: 0, female: 1, other: 2 }
 
   before_save :downcase_email
 
@@ -13,6 +16,7 @@ class User < ApplicationRecord
                     format: {with: VALID_EMAIL_REGEX},
                     uniqueness: {case_sensitive: false}
   validates :birthday, presence: true
+  validates :gender, presence: true
   validate :birthday_within_range
 
   private
