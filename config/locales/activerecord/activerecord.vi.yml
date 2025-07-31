@@ -7,6 +7,7 @@ vi:
         name: "Tên"
         email: "Email"
         birthday: "Ngày sinh"
+        gender: "Giới tính"
         password: "Mật khẩu"
         password_confirmation: "Xác nhận mật khẩu"
     errors:
@@ -16,7 +17,6 @@ vi:
             birthday:
               in_past: "phải nằm trong vòng 100 năm trở lại"
               in_future: "không được lớn hơn ngày hiện tại"
-
   errors:
     messages:
       blank: "không được để trống"

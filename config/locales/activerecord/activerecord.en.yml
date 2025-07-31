@@ -1,22 +1,22 @@
 en:
   activerecord:
+    models:
+      user: "User"
+    attributes:
+      user:
+        name: "Name"
+        email: "Email"
+        birthday: "Birthday"
+        gender: "Gender"
+        password: "Password"
+        password_confirmation: "Password confirmation"
+    errors:
       models:
-        user: "User"
-      attributes:
         user:
-          name: "Name"
-          email: "Email"
-          birthday: "Birthday"
-          password: "Password"
-          password_confirmation: "Password confirmation"
-      errors:
-        models:
-          user:
-            attributes:
-              birthday:
-                in_past: "must not be more than 100 years ago"
-                in_future: "must not be in the future"
-
+          attributes:
+            birthday:
+              in_past: "must not be more than 100 years ago"
+              in_future: "must not be in the future"
   errors:
     messages:
       blank: "can't be blank"
