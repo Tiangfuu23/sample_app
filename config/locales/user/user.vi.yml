@@ -1,0 +1,23 @@
+vi:
+  users:
+    new:
+      title: "Đăng ký"
+      submit: "Tạo tài khoản"
+      name: "Họ và tên"
+      email: "Email"
+      birthday: "Ngày sinh"
+      gender: "Giới tính"
+      password: "Mật khẩu"
+      password_confirmation: "Xác nhận mật khẩu"
+    show:
+      created_at: "Được tạo lúc:"
+      updated_at: "Được cập nhật lần cuối vào lúc:"
+      not_found: "Không tìm thấy người dùng!"
+
+    create:
+      success_message: "Người dùng tạo thành công"
+
+    helpers:
+      male: "Nam"
+      female: "Nữ"
+      other: "Khác"
