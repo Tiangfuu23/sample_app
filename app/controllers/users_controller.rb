@@ -4,7 +4,7 @@ class UsersController < ApplicationController
   # GET /users/:id
   def show; end
 
-   # GET /signup
+  # GET /signup
   def new
     @user = User.new
   end

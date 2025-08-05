@@ -2,17 +2,20 @@ class SessionsController < ApplicationController
   before_action :load_user, only: :create
   before_action :check_authen, only: :create
 
-  # GET /login
+  REMEMBER_ME = "1".freeze
+
+  # GET: /login
   def new; end
 
-  # POST /login
+  # POST: /login
   def create
     reset_session
-    log_in user
-    redirect_to user
+    log_in @user
+    remember_cookies(@user) if params.dig(:session, :remember_me) == REMEMBER_ME
+    redirect_to @user
   end
 
-  # DELETE /logout
+  # DELETE: /logout
   def destroy
     log_out
     redirect_to root_url, status: :see_other
@@ -21,7 +24,7 @@ class SessionsController < ApplicationController
   private
   def load_user
     email = params.dig(:session, :email)&.downcase
-    return if @user = User.find_by(email: email)
+    return if @user = User.find_by(email:)
 
     flash.now[:danger] = t(".invalid_email_password_combination")
     render :new, status: :unprocessable_entity
@@ -33,5 +36,4 @@ class SessionsController < ApplicationController
     flash.now[:danger] = t(".invalid_email_password_combination")
     render :new, status: :unprocessable_entity
   end
-
 end
