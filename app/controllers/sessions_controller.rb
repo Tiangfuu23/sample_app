@@ -1,0 +1,37 @@
+class SessionsController < ApplicationController
+  before_action :load_user, only: :create
+  before_action :check_authen, only: :create
+
+  # GET /login
+  def new; end
+
+  # POST /login
+  def create
+    reset_session
+    log_in user
+    redirect_to user
+  end
+
+  # DELETE /logout
+  def destroy
+    log_out
+    redirect_to root_url, status: :see_other
+  end
+
+  private
+  def load_user
+    email = params.dig(:session, :email)&.downcase
+    return if @user = User.find_by(email: email)
+
+    flash.now[:danger] = t(".invalid_email_password_combination")
+    render :new, status: :unprocessable_entity
+  end
+
+  def check_authen
+    return if @user.authenticate(params.dig(:session, :password))
+
+    flash.now[:danger] = t(".invalid_email_password_combination")
+    render :new, status: :unprocessable_entity
+  end
+
+end
