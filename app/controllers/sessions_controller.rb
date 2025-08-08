@@ -9,10 +9,11 @@ class SessionsController < ApplicationController
 
   # POST: /login
   def create
+    forwarding_url = session[:forwarding_url]
     reset_session
     log_in @user
     remember_cookies(@user) if params.dig(:session, :remember_me) == REMEMBER_ME
-    redirect_to @user
+    redirect_back_or forwarding_url || @user
   end
 
   # DELETE: /logout

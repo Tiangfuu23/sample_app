@@ -26,6 +26,7 @@ en:
       profile: "Profile"
       settings: "Setting"
       logout: "Log out"
+      users: "Users"
 
   error_messages:
     the_form_contains_html: "The form contains %{count} error(s)."
