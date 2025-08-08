@@ -18,8 +18,10 @@ class User < ApplicationRecord
                     format: {with: VALID_EMAIL_REGEX},
                     uniqueness: {case_sensitive: false}
   validates :birthday, presence: true
-  validates :gender, presence: true
+  validates :gender, presence: true, allow_nil: true
   validate :birthday_within_range
+
+  scope :newest, ->{order(created_at: :desc)}
 
   class << self
     def digest string
@@ -43,7 +45,7 @@ class User < ApplicationRecord
   end
 
   def session_token
-    remember_token  || remember
+    remember_token || remember
   end
 
   def forget

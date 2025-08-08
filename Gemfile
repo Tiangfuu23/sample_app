@@ -46,6 +46,12 @@ gem "bootstrap-sass", "3.4.1"
 # Use Sass to process CSS
 gem "bcrypt", "~> 3.1.7"
 gem "config"
+
+# Add Gem faker
+gem "faker", "2.21.0"
+
+# Add Gem pagy
+gem "pagy"
 gem "sassc-rails"
 # Use Active Storage variants [https://guides.rubyonrails.org/active_storage_overview.html]
 # gem "image_processing", "~> 1.2"
