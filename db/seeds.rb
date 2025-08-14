@@ -5,7 +5,9 @@ User.create!(
   password_confirmation: "123",
   birthday: Date.new(2003, 1, 23),
   gender: "male",
-  admin: true
+  admin: true,
+  activated: true,
+  activated_at: Time.zone.now
 )
 
 99.times do |n|
@@ -21,6 +23,8 @@ User.create!(
     password: password,
     password_confirmation: password,
     birthday: birthday,
-    gender: gender
+    gender: gender,
+    activated: true,
+    activated_at: Time.zone.now
   )
 end

@@ -39,14 +39,14 @@ module SessionsHelper
     return unless (user_id = session[:user_id])
 
     user = User.find_by id: user_id
-    user if user&.authenticated?(session[:session_token])
+    user if user&.authenticated?(:remember, session[:session_token])
   end
 
   def user_from_cookies
     return unless (user_id = cookies.signed[:user_id])
 
     user = User.find_by id: user_id
-    return unless user&.authenticated?(cookies[:remember_token])
+    return unless user&.authenticated?(:remember, cookies[:remember_token])
 
     log_in user
     user

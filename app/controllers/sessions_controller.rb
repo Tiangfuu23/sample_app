@@ -1,6 +1,7 @@
 class SessionsController < ApplicationController
   before_action :load_user, only: :create
   before_action :check_authen, only: :create
+  before_action :check_activation, only: :create
 
   REMEMBER_ME = "1".freeze
 
@@ -36,5 +37,12 @@ class SessionsController < ApplicationController
 
     flash.now[:danger] = t(".invalid_email_password_combination")
     render :new, status: :unprocessable_entity
+  end
+
+  def check_activation
+    return if @user.activated?
+
+    flash[:warning] = t(".account_not_activated")
+    redirect_to root_path, status: :see_other
   end
 end

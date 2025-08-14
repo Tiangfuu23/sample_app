@@ -10,3 +10,5 @@ en:
       remember: "Remember me"
     create:
       invalid_email_password_combination: "Invalid email/password combination."
+      account_not_activated: "Account not activated.
+        Check your email for activation link."
