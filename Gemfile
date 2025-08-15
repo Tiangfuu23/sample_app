@@ -52,6 +52,10 @@ gem "faker", "2.21.0"
 
 # Add Gem pagy
 gem "pagy"
+
+# Add gem figaro for environment variables
+gem "figaro"
+
 gem "sassc-rails"
 # Use Active Storage variants [https://guides.rubyonrails.org/active_storage_overview.html]
 # gem "image_processing", "~> 1.2"
