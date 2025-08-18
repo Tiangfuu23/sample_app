@@ -8,6 +8,7 @@ en:
       new_user?: "New user?"
       sign_up_now!: "Sign up now!"
       remember: "Remember me"
+      forgot_password: "Forgot password?"
     create:
       invalid_email_password_combination: "Invalid email/password combination."
       account_not_activated: "Account not activated.
