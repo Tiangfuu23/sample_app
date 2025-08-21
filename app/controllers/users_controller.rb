@@ -7,7 +7,14 @@ class UsersController < ApplicationController
   before_action :admin_user, only: :destroy
 
   # GET /users/:id
-  def show; end
+  def show
+    @page, @microposts = pagy @user.microposts
+                                   .recent
+                                   .includes(:user)
+                                   .with_attached_image,
+                              items: PAGE_LIMIT,
+                              limit: PAGE_LIMIT
+  end
 
   # GET /signup
   def new
@@ -66,14 +73,6 @@ class UsersController < ApplicationController
     return if @user
 
     redirect_to root_path
-  end
-
-  def logged_in_user
-    return if logged_in?
-
-    store_location
-    flash[:danger] = t("users.logged_in_user.please_log_in")
-    redirect_to login_url
   end
 
   def correct_user

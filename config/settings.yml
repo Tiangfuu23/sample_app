@@ -8,3 +8,12 @@ mailer:
   mailer_layout: "mailer"
 
 host: "http://localhost:3000"
+
+digit_50: 50
+
+microposts:
+  image_content_types:
+    - image/jpeg
+    - image/gif
+    - image/png
+  image_accept_format: "image/jpeg,image/gif,image/png"
