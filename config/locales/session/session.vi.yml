@@ -8,6 +8,7 @@ vi:
       new_user?: "Người dùng mới?"
       sign_up_now!: "Đăng ký ngay!"
       remember: "Ghi nhớ tôi"
+      forgot_password: "Quên mật khẩu?"
     create:
       invalid_email_password_combination: "Email hoặc mật khẩu không đúng."
       account_not_activated: "Tài khoản chưa được kích hoạt.
