@@ -25,6 +25,8 @@ class User < ApplicationRecord
 
   scope :newest, ->{order(created_at: :desc)}
 
+  has_many :microposts, class_name: Micropost.name, dependent: :destroy
+
   class << self
     def digest string
       cost = if ActiveModel::SecurePassword.min_cost
@@ -47,7 +49,7 @@ class User < ApplicationRecord
   end
 
   def session_token
-    remember_token || remember
+    remember_digest || remember
   end
 
   def forget
@@ -83,6 +85,10 @@ class User < ApplicationRecord
   # Sends password reset email.
   def send_password_reset_email
     UserMailer.password_reset(self).deliver_now
+  end
+
+  def feed
+    microposts.order(created_at: :desc)
   end
 
   private
