@@ -44,6 +44,10 @@ en:
     view_profile: "View profile"
     micropost_count: "Microposts count: %{count}"
 
+  stats:
+    following: "Following"
+    followers: "Followers"
+
   datetime:
     distance_in_words:
       half_a_minute: "half a minute"
